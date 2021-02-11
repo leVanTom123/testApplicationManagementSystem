@@ -1,13 +1,13 @@
 # appointmentsManagementSystem
 
 # Stack
-MySQL database, Spring framework, Thymeleaf template engine.
+MySQL(Workbench) database, Spring framework, Thymeleaf template engine.
 
 *Please check your port.
 
 # 1Step
 Application accesses the database whose name is "appointments_management"
-Please create data with that name.
+Please create database with that name.
 
 # 2Step
 Import database files to DB you have created ("appointments_management") . Files are located in project directory: src/main/resources/dbdump
