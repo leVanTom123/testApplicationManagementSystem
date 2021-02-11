@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/2001/XMLSchema">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <body class="container">
+        <div>Your generated PIN:</div>
+        <div th:text="${appointmentData.pinCode}"></div>
+        <div>Time left before the visit</div>
+        <div th:text="${appointmentData.timeLeftTillAppointment}"></div>
+        <div>Your place in line</div>
+        <div th:text="${appointmentData.placeInLine}"></div>
+
+        <a data-th-href="@{/mvc/appointments/__${appointmentData.id}__/remove}" class="btn btn-danger">Cancel the visit</a>
+        <a class="btn btn-info"
+           data-th-href="@{/mvc/appointments/searchAppointment}">Search appointment</a>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+    </body>
+</html>
