@@ -18,8 +18,6 @@ Check application.properties file for the password and run application.
 
 # 4Step
 
-Because of lack of time there is no navigation bar created. You have to use url to reach seperate pages.
-
 Intro page: http://localhost:8080/mvc/appointments/reservation
 This page is for the customers to reservate appointment with the specialist.
 When reservation is succesful, customer will see appointment's info with auto generated code, how much time left before the visit and position in line.
