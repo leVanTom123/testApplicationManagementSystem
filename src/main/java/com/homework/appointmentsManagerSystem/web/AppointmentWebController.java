@@ -31,7 +31,7 @@ public class AppointmentWebController {
         List<SpecialistDTO> specialists = appointmentService.specialistDTOList(specialistService.getSpecialistList());
         model.addAttribute("appointmentApplicationDTO", new AppointmentApplicationDto());
         model.addAttribute("specialists", specialists);
-        return "AppointmentReservation";
+        return "appointmentReservation";
     }
 
     @PostMapping(value = "/create-appointment",
