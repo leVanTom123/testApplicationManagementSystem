@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableGlobalMethodSecurity(
@@ -26,7 +27,7 @@ public class LoginSecurity extends WebSecurityConfigurerAdapter {
 
                 .authorizeRequests()
                 .antMatchers("/mvc/specialist/managementPanel*").hasRole("SPECIALIST")
-                .antMatchers("/mvc/specialist/cancel").hasRole("SPECIALIST")
+                .antMatchers("/appointments/{id}/remove").hasRole("SPECIALIST")
 
                 .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
@@ -40,7 +41,8 @@ public class LoginSecurity extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/mvc/specialist/managementPanel")
                 .and()
                 .logout()
-                .logoutSuccessUrl("/");
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/login");
 
     }
 }

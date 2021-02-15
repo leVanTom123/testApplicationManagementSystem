@@ -7,6 +7,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
     <body class="container">
+        <div th:replace="/navBar :: navBar"></div>
         <form action="#" th:action="@{/mvc/appointments/create-appointment}" th:object="${appointmentApplicationDTO}"
               method="POST">
             <div class="form-group">
@@ -42,11 +43,10 @@
                 </option>
             </select>
             <div class="form-footer">
-                <button class="btn btn-primary">Reserve</button>
+                <button class="btn btn-primary" style="background-color: #005f0f;
+                                                border-color: #005f0f;">Reserve</button>
             </div>
         </form>
-        <p>Log in needed only for specialist or administration</p>
-        <a class="btn btn-primary" data-th-href="@{/login}">LogIn</a>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                 crossorigin="anonymous"></script>

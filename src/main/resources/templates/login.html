@@ -9,6 +9,7 @@
           crossorigin="anonymous" />
 </head>
     <body>
+    <div th:replace="/navBar :: navBar"></div>
         <div class="container-fluid text-center">
 
             <form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto;">
@@ -43,7 +44,8 @@
                     <p>
                         <input type="submit"
                                value="Login"
-                               class="btn btn-primary" />
+                               class="btn btn-primary"
+                               style="background-color: #005f0f; border-color: #005f0f;"/>
                     </p>
                 </div>
             </form>
